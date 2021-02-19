@@ -1,0 +1,15 @@
+
+
+    <p class="text-center">{{list.name}}</p>
+
+    <!-- pour le sort de la liste -->
+    <!-- on pose "cdkDropList" sur le parent -->
+    <!-- il faut gérer l'event dans le js -->
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
+        <!-- on pose "cdkDrag" sur l'enfant itérable  -->
+        <div cdkDrag *ngFor="let card of list.cards">
+            <app-card  [card]="card" ></app-card>
+        </div>
+    </div>
+
+

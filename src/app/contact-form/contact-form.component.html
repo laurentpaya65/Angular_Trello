@@ -1,0 +1,29 @@
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" action="">
+    <div>
+        <label  class="form-label">Prenom</label>
+        <input formControlName="first" type="text" class="form-control">
+        <p *ngIf="contactForm.get('first').hasError('minlength') && contactForm.get('first').touched" class="form-error">
+            Min 2 caractères</p>
+    </div>
+    <div>
+        <label  class="form-label">Nom</label>
+        <input formControlName="phone" type="text" class="form-control">
+        <p *ngIf="contactForm.get('phone').hasError('required')" class="form-error">
+            requis</p>
+    </div>
+    <div>
+        <label  class="form-label">telephone</label>
+        <input formControlName="last" type="text" class="form-control">
+        <p *ngIf="contactForm.get('last').hasError('minlength') && contactForm.get('last').touched" class="form-error">
+            Min 2 caractères</p>
+    </div>
+    <div>
+        <label  class="form-label">Email</label>
+        <input formControlName="email" type="text" class="form-control">
+        <p *ngIf="contactForm.get('email').hasError('email') && contactForm.get('email').touched" class="form-error">
+            Renseigné un email valide</p>
+    </div>
+
+    <button type="submit">Ajouter</button>
+</form>

@@ -1,0 +1,15 @@
+<div class="d-flex">
+    <button routerLink="/add-contacts" class="btn btn-primary">
+    Ajouter un contact
+    </button>
+</div>
+
+<ul class="list-group">
+    <li *ngFor="let contact of contacts" 
+    class="list-group-item d-flex justify-content-between">
+        <span>{{contact.first}}</span>
+        <span>{{contact.last}}</span>
+        <span>{{contact.phone}}</span>
+        <span>{{contact.email}}</span>
+    </li>
+</ul>

@@ -1,0 +1,15 @@
+<!-- <pre> {{board | json}}</pre> -->
+
+<div class="d-flex py-3">
+    <!--  les LISTES -->
+    <div *ngFor="let list of board" class="list text-center">
+        <button (click)="delList(list.id)" class="btn btn-sm btn-light">Effacer la liste</button>
+        <!-- [list]="list" permet d'injecter la Property [list] dans le composant list -->
+        <app-list [list]="list"></app-list>
+    </div>
+
+    <!--  ACTION : fake List pour Ajouter une Liste -->
+    <div class="list text-center">
+        <button (click)="addList()" class="btn btn-primary">Ajouter une liste</button>
+    </div>
+</div>
